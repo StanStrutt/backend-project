@@ -9,7 +9,6 @@ import path from "path"
 
 const app = express();
 app.use(cors())
-app.use(express.static(path.join(import.meta.dirname, "..", "afrontend/build")))
 app.use(express.json());
 
 mongoose.connect('mongodb://127.0.0.1:27017/books', 
@@ -25,9 +24,6 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(import.meta.dirname, "..", "afrontend/build", "index.html"))
-})
 
 app.post('/books', async (req, res) => {
   try {
