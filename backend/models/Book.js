@@ -1,22 +1,12 @@
-import mongoose from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 
 const BookSchema = new mongoose.Schema({
-    id: {type: Number, required: true},
     title: { type: String, required: true },
-    author: {
-        id: {type: Number, required: true},
-        name: { type: String, required: true },
-        yearOfBirth: { type: Number, required: true },
-        yearOfDeath: { type: Number, required: true },
-    },
-    publisher: {
-        id: {type: Number, required: true},
-        name: { type: String, required: true },
-        yearFounded: { type: Number },
-        headquartersLocation: { type: String }
-    },
+    author: { type: Schema.Types.ObjectId, ref: "Author" },
+    publisher: { type: Schema.Types.ObjectId, ref: "Publisher" },
     numberOfPages: { type: Number, required: true },
-    yearPublished: { type: Number, required: true }
+    yearPublished: { type: Number, required: true },
+    __v: { type: Number, select: false}
 })
 
 export default mongoose.model('Book', BookSchema);

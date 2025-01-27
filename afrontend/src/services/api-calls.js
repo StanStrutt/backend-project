@@ -43,7 +43,7 @@ export function GetBookById() {
     useEffect(() => {
     const fetchData = async () => {
         try {
-            const response = await axios.get(`${API_URL}/`)
+            const response = await axios.get(`${API_URL}/6792415fe7905e63136002ec`)
             setData(response.data)
         } catch (err) {
             setError(err.message || "Something went wrong")

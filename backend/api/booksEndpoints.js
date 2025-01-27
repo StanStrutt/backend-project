@@ -15,7 +15,8 @@ const Router = router()
   
   Router.get('/books', async (req, res) => {
     try {
-        const books = await Book.find();
+        const books = await Book.find()
+        .populate(["author", "publisher"]);
         res.json(books);
     } catch (err) {
         res.status(500).json({ error: err.message });

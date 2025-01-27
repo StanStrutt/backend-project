@@ -28,11 +28,20 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.books-info {
+  padding: 3vh 5vw;
+}
+
+.books-info h2 {
+  padding-bottom: 4vh;
+}
+
+.books-info ul li {
+  padding: 1vh 1vw;
+}
+
+.books-info hr {
+  background-color: black;
+  height: 2px;
+  margin-top: 10vh;
 }
